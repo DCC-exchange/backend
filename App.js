@@ -7,6 +7,7 @@ const profileRoutes = require('./routes/profileRoutes')
 const TradingView = require('./routes/TradingView')
 const Spot = require('./routes/Spot')
 const transaction = require('./routes/Transaction')
+const depositRoute = require('./routes/depositRoutes')
 const cors = require('cors');
 
 require('dotenv').config()
@@ -22,6 +23,8 @@ app.use('/api/profile', profileRoutes)
 app.use('/api/tradingview', TradingView)
 app.use('/api/spot', Spot)
 app.use('/api', transaction)
+app.use("/api/deposit", depositRoute)
+
 
 mongoose.set('strictQuery', false);
 
@@ -34,3 +37,4 @@ mongoose.connect(dbUri, { useNewUrlParser: true,  useUnifiedTopology: true })
 app.listen(process.env.PORT, ()=>{
     console.log("Running on port "+ process.env.PORT)
 })
+

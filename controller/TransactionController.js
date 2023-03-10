@@ -1,5 +1,3 @@
-const express = require('express')
-const router = express.Router()
 const Transaction = require('../model/TransactionModel')
 const UserId = require('../model/profileModel')
 const requireAuth = require('../middleware/requireAuth')
