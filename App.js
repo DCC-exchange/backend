@@ -8,6 +8,8 @@ const TradingView = require('./routes/TradingView')
 const Spot = require('./routes/Spot')
 const transaction = require('./routes/Transaction')
 const depositRoute = require('./routes/depositRoutes')
+const transfer = require('./routes/transferRoutes')
+
 const cors = require('cors');
 
 require('dotenv').config()
@@ -24,6 +26,7 @@ app.use('/api/tradingview', TradingView)
 app.use('/api/spot', Spot)
 app.use('/api', transaction)
 app.use("/api/deposit", depositRoute)
+app.use('/api/transfer', transfer)
 
 
 mongoose.set('strictQuery', false);
