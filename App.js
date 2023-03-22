@@ -9,6 +9,7 @@ const Spot = require('./routes/Spot')
 const transaction = require('./routes/Transaction')
 const depositRoute = require('./routes/depositRoutes')
 const transfer = require('./routes/transferRoutes')
+const withdraw = require('./routes/withdrawRoutes')
 
 const cors = require('cors');
 
@@ -27,6 +28,7 @@ app.use('/api/spot', Spot)
 app.use('/api', transaction)
 app.use("/api/deposit", depositRoute)
 app.use('/api/transfer', transfer)
+app.use('/api/', withdraw)
 
 
 mongoose.set('strictQuery', false);

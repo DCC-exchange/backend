@@ -9,6 +9,5 @@ router.use(requireAuth)
 
 
 router.post('/transfer-money', transferMoneyOrCoin )
-// router.post('/transfer-coin', )
 
 module.exports = router 

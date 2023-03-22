@@ -1,12 +1,13 @@
-const Deposit = require('../models/Deposit')
-const User = require('../models/User')
+const Deposit = require('../model/Deposit')
+const User = require('../model/UserModel')
+const Profile = require('../model/profileModel')
 
 //..Create Deposit 
 const createDeposit = async (req, res) => {
   try {
-    const {user_id, amount, currency } = req.body;
+    const {username, amount, currency } = req.body;
 
-    const user = await User.findById(user_id)
+    const user = await Profile.findOne({username})
     if(!user){
         return res.status(404).json({error: "User not found"})
     }
